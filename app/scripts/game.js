@@ -10,10 +10,10 @@ window.Game = (function() {
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
-		this.pipe1Upper = new window.Pipe(this.el.find('.Pipe1upper'), this, "upper", 1);
-		this.pipe1Lower = new window.Pipe(this.el.find('.Pipe1lower'), this, "lower", 1);
-		this.pipe2Upper = new window.Pipe(this.el.find('.Pipe2upper'), this, "upper", 2);
-		this.pipe2Lower = new window.Pipe(this.el.find('.Pipe2lower'), this, "lower", 2);
+		this.pipe1Upper = new window.Pipe(this.el.find('.Pipe1upper'), this, 'upper', 1);
+		this.pipe1Lower = new window.Pipe(this.el.find('.Pipe1lower'), this, 'lower', 1);
+		this.pipe2Upper = new window.Pipe(this.el.find('.Pipe2upper'), this, 'upper', 2);
+		this.pipe2Lower = new window.Pipe(this.el.find('.Pipe2lower'), this, 'lower', 2);
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -51,7 +51,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
-		
+
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
@@ -96,5 +96,3 @@ window.Game = (function() {
 
 	return Game;
 })();
-
-
