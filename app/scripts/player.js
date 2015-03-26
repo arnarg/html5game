@@ -6,7 +6,7 @@ window.Player = (function() {
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
 	var SPEED = 30;
-	var FALLSPEED = 5; // * 10 pixels per second
+	var FALLSPEED = 5;
 	var FALLCOUNTER = 1;
 	var FLYSPEED = 150;
 	var FLYCOUNTER = 1;

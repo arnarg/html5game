@@ -22,20 +22,29 @@
 	-webkit-transition: -webkit-transform 0.5s;
 }
 
-.Pipe {
+.Pipe1upper {
 	position: absolute;
 	width: 10em;
-	right: 0;
 	background: green;
+	height: 20em;
 }
-
-.Pipeupper {
-	top: 0;
+.Pipe2upper {
+	position: absolute;
+	width: 10em;
+	background: green;
 	height: 20em;
 }
 
-.Pipelower {
-	bottom: 0;
+.Pipe1lower {
+	position: absolute;
+	width: 10em;
+	background: green;
+	height: 20em;
+}
+.Pipe2lower {
+	position: absolute;
+	width: 10em;
+	background: green;
 	height: 20em;
 }
 
