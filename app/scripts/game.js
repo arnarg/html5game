@@ -63,7 +63,6 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
-		console.log(this.passCtr);
 		this.pipe1Upper.reset(false);
 		this.pipe1Lower.reset(false);
 		this.pipe2Upper.reset(false);
