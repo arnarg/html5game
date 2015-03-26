@@ -38,26 +38,36 @@
 	transition: transform 0.5s;
 }
 
+.Pipeupper {
+	background-image: url("../images/pipeUpper.png");
+	background-size: 100%;
+}
+
+.Pipelower {
+	background-image: url("../images/pipeLower.png");
+	background-size: 100%;
+}
+
 .Pipe1upper {
 	position: absolute;
 	width: 10em;
-	background: green;
+	//background: green;
 }
 .Pipe2upper {
 	position: absolute;
 	width: 10em;
-	background: green;
+	//background: green;
 }
 
 .Pipe1lower {
 	position: absolute;
 	width: 10em;
-	background: green;
+	//background: green;
 }
 .Pipe2lower {
 	position: absolute;
 	width: 10em;
-	background: green;
+	//background: green;
 }
 
 .Border {
