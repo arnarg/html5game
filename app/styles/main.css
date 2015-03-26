@@ -10,18 +10,15 @@
 	-webkit-animation: spriteAnimation .5s steps(3) infinite alternate;
 }
 
+@-webkit-keyframes spriteAnimation {
+	from { background-position: 0; }
+	50% { background-position: 300px; } 
+	to { background-position: 600px; }
+}
 @keyframes spriteAnimation {
-	from {
-		background-position: 0;
-	}
-
-	50% {
-		background-position: 300px;
-	}
-
-	to {
-		background-position: 600px;
-	}
+	from { background-position: 0; }
+	50% { background-position: 300px; } 
+	to { background-position: 600px; }
 }
 
 .Scoreboard {
@@ -71,9 +68,14 @@
 	background-position: 0px 0px;
 	background-repeat: repeat-x;
 
+	-webkit-animation: animatedBackground 2s linear infinite;
 	animation: animatedBackground 2s linear infinite;
 }
 
+@-webkit-keyframes animatedBackground {
+	from { background-position: 100% 0; }
+	to { background-position: 0% 0; }
+}
 @keyframes animatedBackground {
 	from { background-position: 100% 0; }
 	to { background-position: 0% 0; }
@@ -122,5 +124,6 @@ body {
 	background-image: url("../images/background2.png");
 	background-position: 0px 0px;
 	background-repeat: repeat-x;
+	-webkit-animation: animatedBackground 7s linear infinite;
 	animation: animatedBackground 7s linear infinite;
 }
