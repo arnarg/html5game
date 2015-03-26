@@ -4,8 +4,23 @@
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background-image: url("../images/mario.png");
-	background-size: 100%;
+	background-image: url("../images/mario-sprite.png");
+	background-size: 300%;
+	-moz-animation: spriteAnimation .5s steps(3) infinite alternate;
+}
+
+@keyframes spriteAnimation {
+	from {
+		background-position: 0;
+	}
+
+	50% {
+		background-position: 300px;
+	}
+
+	to {
+		background-position: 600px;
+	}
 }
 
 .Scoreboard {
