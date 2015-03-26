@@ -20,6 +20,8 @@
 	text-align: center;
 	-webkit-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
+	transform: translate(0, -40em);
+	transition: transform 0.5s;
 }
 
 .Pipe1upper {
@@ -70,6 +72,7 @@
 */
 .Scoreboard.is-visible {
 	-webkit-transform: none;
+	-moz-transform: none;
 }
 
 .Scoreboard-restart {
