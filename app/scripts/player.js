@@ -42,7 +42,7 @@ window.Player = (function() {
 		if (Controls.keys.up) {
 			this.pos.y -= delta * SPEED;
 		}
-		if (Controls.keys.mouse) {
+		if (Controls.keys.mouse || Controls.keys.space) {
 			if (FLYCOUNTER === 10) {
 				Controls.keys.mouse = false;
 				FLYCOUNTER = 1;
@@ -61,7 +61,6 @@ window.Player = (function() {
 				this.pos.y += delta * (FALLSPEED * FALLCOUNTER);
 				++FALLCOUNTER;
 			}
-			
 		}
 		
 		this.checkCollisionWithBounds();

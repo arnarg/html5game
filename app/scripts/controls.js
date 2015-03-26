@@ -58,6 +58,12 @@ window.Controls = (function() {
         }
     };
 
+    /*Controls.prototype._onSpace = function(e) {
+        if(e.keyCode === 32 && this.keys.space) {
+            this._didJump = true;
+        }
+    };*/
+
     /**
      * Only answers true once until a key is pressed again.
      */
