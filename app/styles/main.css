@@ -7,6 +7,7 @@
 	background-image: url("../images/mario-sprite.png");
 	background-size: 300%;
 	-moz-animation: spriteAnimation .5s steps(3) infinite alternate;
+	-webkit-animation: spriteAnimation .5s steps(3) infinite alternate;
 }
 
 @keyframes spriteAnimation {
