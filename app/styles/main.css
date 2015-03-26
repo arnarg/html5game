@@ -31,6 +31,7 @@
 	box-sizing: border-box;
 	background: purple;
 	text-align: center;
+	border-radius: 0.5em;
 	-webkit-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
 	transform: translate(0, -40em);
@@ -98,7 +99,7 @@
 	cursor: pointer;
 }
 .Scoreboard-restartText {
-	font-family: 'Comic Sans MS', serif;
+	font-family: 'Press Start 2P', cursive;
 	font-size: 2.4em;
 	color: white;
 }
@@ -126,4 +127,26 @@ body {
 	background-repeat: repeat-x;
 	-webkit-animation: animatedBackground 7s linear infinite;
 	animation: animatedBackground 7s linear infinite;
+}
+
+.counter {
+	position: absolute;
+	font-size: 5em;
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+	left: 45%;
+	top: 0.5em;
+}
+
+.Scoreboard .counter {
+	top: 2em;
+}
+
+.Scoreboard .scoreText {
+	position: absolute;
+	font-size: 3em;
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+	left: 10%;
+	top: 0.5em;
 }

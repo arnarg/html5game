@@ -9,6 +9,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
+        <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -28,6 +29,10 @@
             <source src="audio/mario.mp3" type="audio/mpeg">
         </audio>
 
+        <audio class="successAudio">
+            <source src="audio/mariosuccess.mp3" type="audio/mpeg">
+        </audio>
+
         <div class="GameCanvas">
             <div class="Player"></div>
             <div class="Pipe1upper" id="Pipe1upper"></div>
@@ -36,9 +41,12 @@
             <div class="Pipe2lower" id="Pipe2lower"></div>
             <div class="Scoreboard">
                 <button class="Scoreboard-restart">
+                    <p class="scoreText">Your score:</p>
+                    <div class="counter">0</div>
                     <span class="Scoreboard-restartText">Restart</span>
                 </button>
             </div>
+            <div class="counter">0</div>
 
             <div class="Border"></div>
         </div>

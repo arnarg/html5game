@@ -74,6 +74,8 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
+		console.log("stopping");
+		$(".Border").stop();
 
 		// Should be refactored into a Scoreboard class.
 		var that = this;
