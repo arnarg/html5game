@@ -63,10 +63,10 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
-		this.pipe1Upper.reset();
-		this.pipe1Lower.reset();
-		this.pipe2Upper.reset();
-		this.pipe2Lower.reset();
+		this.pipe1Upper.reset(false);
+		this.pipe1Lower.reset(false);
+		this.pipe2Upper.reset(false);
+		this.pipe2Lower.reset(false);
 	};
 
 	/**
