@@ -11,14 +11,13 @@ window.Pipe = (function() {
 	var playerPosX = 35;
 	var passCtr = 0;
 
-
 	var Pipe = function(el, game, type, number) {
 		this.el = el;
 		this.game = game;
 		this.type = type;
 		this.number = number;
 
-		if(this.type === "upper") {
+		if(this.type === 'upper') {
 			this.INITIAL_POSITION_Y = 0;
 		} else {
 			this.INITIAL_POSITION_Y = 57.6;
@@ -32,7 +31,6 @@ window.Pipe = (function() {
 	};
 
 	Pipe.prototype.reset = function(soft) {
-
 		this.makeRandomGap();
 		
 		if(soft){
@@ -42,13 +40,13 @@ window.Pipe = (function() {
 			if(this.number === 2){
 				this.INITIAL_POSITION_X = 153.6;
 				passCtr = 0;
-				$("#counter").text(passCtr);
+				$('#counter').text(passCtr);
 			}
 		}
 
 		this.pos.x = this.INITIAL_POSITION_X;
 
-		if(this.type === "upper") {
+		if(this.type === 'upper') {
 			this.el.css('height', newTopHeight + 'em');
 			this.passed = false;
 		}
@@ -72,10 +70,9 @@ window.Pipe = (function() {
 		else if(resetCounter === 1) {
 			resetCounter = 0;
 		}
-	}
+	};
 
 	Pipe.prototype.onFrame = function(delta) {
-
 		this.pos.x -= delta * SPEED;
 
 		this.checkForReset();
@@ -96,24 +93,23 @@ window.Pipe = (function() {
 	Pipe.prototype.checkForPass = function() {
 		if(playerPosX >= (this.pos.x + WIDTH + 5) && !this.passed){
 			++passCtr;
-			$(".successAudio")[0].play();
+			$('.successAudio')[0].play();
 			this.passed = true;
-			$(".counter").text(passCtr);
+			$('.counter').text(passCtr);
 		}
 	};
 
 	Pipe.prototype.checkForCollision = function() {
 		var playerPosY = this.game.player.pos.y;
 
-		if(playerPosX >= this.pos.x && playerPosX <= (this.pos.x + WIDTH) && playerPosY <= this.newTopHeight && this.type === "upper"){
+		if(playerPosX >= this.pos.x && playerPosX <= (this.pos.x + WIDTH) && playerPosY <= this.newTopHeight && this.type === 'upper'){
 			return this.game.gameover();
 		}
 		playerPosY += 5.2;
-		if(playerPosX >= this.pos.x && (playerPosX - 5) <= (this.pos.x + WIDTH) && playerPosY >= this.pos.y && this.type === "lower"){
+		if(playerPosX >= this.pos.x && (playerPosX - 5) <= (this.pos.x + WIDTH) && playerPosY >= this.pos.y && this.type === 'lower'){
 			return this.game.gameover();
 		}
-
-	}
+	};
 
 	return Pipe;
 

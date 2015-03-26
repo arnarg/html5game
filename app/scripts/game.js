@@ -63,10 +63,13 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
+		console.log(this.passCtr);
 		this.pipe1Upper.reset(false);
 		this.pipe1Lower.reset(false);
 		this.pipe2Upper.reset(false);
 		this.pipe2Lower.reset(false);
+		document.getElementById('scoreCounter').style.display = 'block';
+		$('.counter').html(0);
 	};
 
 	/**
@@ -74,8 +77,9 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
-		console.log("stopping");
-		$(".Border").stop();
+		console.log('stopping');
+		$('.Border').stop();
+		document.getElementById('scoreCounter').style.display = 'none';
 
 		// Should be refactored into a Scoreboard class.
 		var that = this;
