@@ -88,6 +88,8 @@ window.Game = (function() {
 		this.pipe2Lower.reset(false);
 		$('#scoreCounter').show();
 		$('.counter').html(0);
+		$('.Border')[0].style.webkitAnimationPlayState = 'running';
+		this.el[0].style.webkitAnimationPlayState = 'running';
 	};
 
 	/**
@@ -98,9 +100,9 @@ window.Game = (function() {
 		$('.gameOverAudio')[0].play();
 		this.isPlaying = false;
 		this.scoreBoardVisible = true;
-		console.log('stopping');
-		$('.Border').stop();
 		$('#scoreCounter').hide();
+		$('.Border')[0].style.webkitAnimationPlayState = 'paused';
+		this.el[0].style.webkitAnimationPlayState = 'paused';
 		
 		// Should be refactored into a Scoreboard class.
 		var that = this;
