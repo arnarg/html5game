@@ -19,7 +19,7 @@ window.Player = (function() {
 	var Player = function(el, game) {
 		this.el = el;
 		this.game = game;
-		this.pos = { x: 0, y: 0 };
+		this.pos = { x: 30, y: 25 };
 	};
 
 	/**
@@ -32,6 +32,7 @@ window.Player = (function() {
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.keys.mouse) {
+			$('.jumpAudio')[0].play();
 			if (FLYCOUNTER === 10) {
 				Controls.keys.mouse = false;
 				FLYCOUNTER = 1;

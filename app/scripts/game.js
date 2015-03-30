@@ -91,13 +91,14 @@ window.Game = (function() {
 	 * Signals that the game is over.
 	 */
 	Game.prototype.gameover = function() {
+		$('.musicAudio')[0].pause();
+		$('.gameOverAudio')[0].play();
 		this.isPlaying = false;
 		this.scoreBoardVisible = true;
 		console.log('stopping');
 		$('.Border').stop();
 		$('#scoreCounter').hide();
-		$('.gameOverAudio')[0].play();
-
+		
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
