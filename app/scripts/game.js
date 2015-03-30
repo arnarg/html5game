@@ -15,6 +15,7 @@ window.Game = (function() {
 		this.pipe2Upper = new window.Pipe(this.el.find('.Pipe2upper'), this, 'upper', 2);
 		this.pipe2Lower = new window.Pipe(this.el.find('.Pipe2lower'), this, 'lower', 2);
 		this.isPlaying = false;
+		this.scoreBoardVisible = false;
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
@@ -50,12 +51,27 @@ window.Game = (function() {
 	 * Starts a new game.
 	 */
 	Game.prototype.start = function() {
-		this.reset();
-
-		// Restart the onFrame loop
-		this.lastFrame = +new Date() / 1000;
-		window.requestAnimationFrame(this.onFrame);
-		this.isPlaying = true;
+		var that = this;
+		$(window).on('mousedown', function(){
+			if(!that.isPlaying && !that.scoreBoardVisible){
+				that.reset();
+				// Restart the onFrame loop
+				that.lastFrame = +new Date() / 1000;
+				window.requestAnimationFrame(that.onFrame);
+				that.isPlaying = true;
+			}
+	    });
+	    $(window).on('keydown', function(e){
+			if(!that.isPlaying && e.keyCode === 32 && !that.scoreBoardVisible){
+				console.log("keydown");
+				that.reset();
+				// Restart the onFrame loop
+				that.lastFrame = +new Date() / 1000;
+				window.requestAnimationFrame(that.onFrame);
+				that.isPlaying = true
+			}
+	    });
+	    return;
 	};
 
 	/**
@@ -76,6 +92,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
+		this.scoreBoardVisible = true;
 		console.log('stopping');
 		$('.Border').stop();
 		$('#scoreCounter').hide();
@@ -89,6 +106,7 @@ window.Game = (function() {
 			.find('.Scoreboard-restart')
 				.one('click', function() {
 					scoreboardEl.removeClass('is-visible');
+					that.scoreBoardVisible = false;
 					that.start();
 				});
 	};
