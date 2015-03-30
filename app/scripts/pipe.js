@@ -32,7 +32,7 @@ window.Pipe = (function() {
 
 	Pipe.prototype.reset = function(soft) {
 		this.makeRandomGap();
-		
+
 		if(soft){
 			this.INITIAL_POSITION_X = 102.4;
 		}
@@ -76,9 +76,9 @@ window.Pipe = (function() {
 		this.pos.x -= delta * SPEED;
 
 		this.checkForReset();
-		
+
 		// Update UI
-		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
 
 		this.checkForCollision();
 		this.checkForPass();
