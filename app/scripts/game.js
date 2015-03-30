@@ -107,7 +107,7 @@ window.Game = (function() {
 		$('.Border')[0].style.webkitAnimationPlayState = 'paused';
 		$('.background')[0].style.webkitAnimationPlayState = 'paused';
 		$('.Player')[0].style.webkitAnimationPlayState = 'paused';
-		$('.Player').css("background-image", "url(/images/mario.png)");
+		$('.Player').css("background-image", "url(/images/marioOldNew.png)");
 		$('.Player').css("background-size", "100%");
 		
 		// Should be refactored into a Scoreboard class.
