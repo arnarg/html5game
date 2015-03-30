@@ -90,6 +90,9 @@ window.Game = (function() {
 		$('.counter').html(0);
 		$('.Border')[0].style.webkitAnimationPlayState = 'running';
 		$('.background')[0].style.webkitAnimationPlayState = 'running';
+		$('.Player')[0].style.webkitAnimationPlayState = 'running';
+		$('.Player').css("background-image", "url(/images/mario-sprite.png)");
+		$('.Player').css("background-size", "300%");
 	};
 
 	/**
@@ -103,6 +106,9 @@ window.Game = (function() {
 		$('#scoreCounter').hide();
 		$('.Border')[0].style.webkitAnimationPlayState = 'paused';
 		$('.background')[0].style.webkitAnimationPlayState = 'paused';
+		$('.Player')[0].style.webkitAnimationPlayState = 'paused';
+		$('.Player').css("background-image", "url(/images/mario.png)");
+		$('.Player').css("background-size", "100%");
 		
 		// Should be refactored into a Scoreboard class.
 		var that = this;
