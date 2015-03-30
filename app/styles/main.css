@@ -193,13 +193,27 @@ body {
 
 .Scoreboard .counter {
 	top: 2em;
+	font-size: 3em;
+}
+
+.Scoreboard .topCounter {
+	font-size: 3em;
+	position: absolute;
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+	left: 45%;
+	top: 5em;
 }
 
 .Scoreboard .scoreText {
 	position: absolute;
-	font-size: 3em;
+	font-size: 2em;
 	font-family: 'Press Start 2P', cursive;
 	color: white;
-	left: 10%;
+	left: 25%;
 	top: 0.5em;
+}
+
+.Scoreboard .topScoreText {
+	top: 4.5em;
 }

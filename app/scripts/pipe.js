@@ -10,6 +10,7 @@ window.Pipe = (function() {
 	var resetCounter = 0;
 	var playerPosX = 35;
 	var passCtr = 0;
+	var topCtr = 0;
 
 	var Pipe = function(el, game, type, number) {
 		this.el = el;
@@ -40,7 +41,8 @@ window.Pipe = (function() {
 			if(this.number === 2){
 				this.INITIAL_POSITION_X = 153.6;
 				passCtr = 0;
-				$('#counter').text(passCtr);
+				//$('#counter').text(passCtr);
+				$('#topCounter').text(topCtr);
 			}
 		}
 
@@ -96,6 +98,10 @@ window.Pipe = (function() {
 			$('.successAudio')[0].play();
 			this.passed = true;
 			$('.counter').text(passCtr);
+			if(passCtr > topCtr) {
+				topCtr = passCtr;
+			}
+			$('#topCounter').text(topCtr);
 		}
 	};
 
