@@ -89,7 +89,7 @@ window.Game = (function() {
 		$('#scoreCounter').show();
 		$('.counter').html(0);
 		$('.Border')[0].style.webkitAnimationPlayState = 'running';
-		this.el[0].style.webkitAnimationPlayState = 'running';
+		$('.background')[0].style.webkitAnimationPlayState = 'running';
 	};
 
 	/**
@@ -102,7 +102,7 @@ window.Game = (function() {
 		this.scoreBoardVisible = true;
 		$('#scoreCounter').hide();
 		$('.Border')[0].style.webkitAnimationPlayState = 'paused';
-		this.el[0].style.webkitAnimationPlayState = 'paused';
+		$('.background')[0].style.webkitAnimationPlayState = 'paused';
 		
 		// Should be refactored into a Scoreboard class.
 		var that = this;
