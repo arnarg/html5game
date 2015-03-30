@@ -143,9 +143,14 @@ body {
 	background-repeat: repeat-x;
 	background-size: auto 100%;
 	transform: translateX(0);
+	-webkit-animation: backgroundAnimation 5s linear infinite;
 	animation: backgroundAnimation 5s linear infinite;
 }
 
+@-webkit-keyframes backgroundAnimation {
+	from { transform: translateX(0); }
+	to { transform: translateX(-51em);}
+}
 @keyframes backgroundAnimation {
 	from { transform: translateX(0); }
 	to { transform: translateX(-51em);}
