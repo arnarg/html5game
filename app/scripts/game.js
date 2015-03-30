@@ -88,6 +88,7 @@ window.Game = (function() {
 		this.pipe2Lower.reset(false);
 		$('#scoreCounter').show();
 		$('.counter').html(0);
+		$('.musicAudio')[0].play();
 	};
 
 	/**
@@ -95,7 +96,9 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		$('.musicAudio')[0].pause();
-		$('.gameOverAudio')[0].play();
+		if($('.muteSoundEffects').val() === true) {
+			$('.gameOverAudio')[0].play();
+		}
 		this.isPlaying = false;
 		this.scoreBoardVisible = true;
 		console.log('stopping');
@@ -115,28 +118,23 @@ window.Game = (function() {
 				});
 	};
 
-	Game.prototype.muteSound = function() {
-		$('.muteSong').click(function() {
-			if($('.muteSong').val === false) {
-				$('.musicAudio')[0].play();
-				$('.musicAudio').val(true);
-			} else {
-				$('.musicAudio')[0].pause();
-				$('.musicAudio').val(false);
-			}
-		});
-		$('.muteSoundEffects').click(function() {
-			if($('.muteSoundEffects').val === false) {
-				$('.jumpAudio')[0].play();
-				$('.gameOverAudio')[0].play();
-				$('.muteSoundEffects').val(true);
-			} else {
-				$('.jumpAudio')[0].pause();
-				$('.gameOverAudio')[0].pause();
-				$('.muteSoundEffects').val(false);
-			}
-		});
-	};
+	$('.muteSong').click(function() {
+		console.log('mutesong');
+		if($('.muteSong').val() === false) {
+			$('.musicAudio')[0].play();
+			$('.musicAudio').val(true);
+		} else {
+			$('.musicAudio')[0].pause();
+			$('.musicAudio').val(false);
+		}
+	});
+	$('.muteSoundEffects').click(function() {
+		if($('.muteSoundEffects').val() === false) {
+			$('.muteSoundEffects').val(true);
+		} else {
+			$('.muteSoundEffects').val(false);
+		}
+	});
 
 	/**
 	 * Some shared constants.
