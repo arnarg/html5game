@@ -14,6 +14,7 @@ window.Player = (function() {
 	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
+	var ROTATION = 0;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -52,6 +53,7 @@ window.Player = (function() {
 				this.pos.y -= delta * (FLYSPEED / FLYCOUNTER);
 				++FLYCOUNTER;
 			}
+			ROTATION = -10;
 		}
 		else {
 			if (FALLCOUNTER === 20) {
@@ -61,12 +63,13 @@ window.Player = (function() {
 				this.pos.y += delta * (FALLSPEED * FALLCOUNTER);
 				++FALLCOUNTER;
 			}
+			++ROTATION;
 		}
-		
+
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {

@@ -6,18 +6,19 @@
 	height: 5em;
 	background-image: url("../images/mario-sprite.png");
 	background-size: 300%;
+	transform: translateZ(0) rotation(0);
 	-moz-animation: spriteAnimation .5s steps(3) infinite alternate;
 	-webkit-animation: spriteAnimation .5s steps(3) infinite alternate;
 }
 
 @-webkit-keyframes spriteAnimation {
 	from { background-position: 0; }
-	50% { background-position: 300px; } 
+	50% { background-position: 300px; }
 	to { background-position: 600px; }
 }
 @keyframes spriteAnimation {
 	from { background-position: 0; }
-	50% { background-position: 300px; } 
+	50% { background-position: 300px; }
 	to { background-position: 600px; }
 }
 
