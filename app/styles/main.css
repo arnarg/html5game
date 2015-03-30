@@ -75,14 +75,24 @@
 .Border {
 	position: absolute;
 	bottom: 0;
-	width: 102.4em;
+	width: 120%;
 	height: 2.5em;
 	background-image: url("../images/border.png");
+	background-size: auto 100%;
 	background-position: 0px 0px;
 	background-repeat: repeat-x;
+	transform: translateX(0);
+	-webkit-animation: groundAnimation 0.09s linear infinite;
+	animation: groundAnimation 0.09s linear infinite;
+}
 
-	-webkit-animation: animatedBackground 2s linear infinite;
-	animation: animatedBackground 2s linear infinite;
+@keyframes groundAnimation {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-2.7em);
+	}
 }
 
 @-webkit-keyframes animatedBackground {
