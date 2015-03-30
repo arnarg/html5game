@@ -52,9 +52,11 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		var that = this;
+		$('#introText').show();
 		$(window).on('mousedown', function(){
 			if(!that.isPlaying && !that.scoreBoardVisible){
 				that.reset();
+				$('#introText').hide();
 				// Restart the onFrame loop
 				that.lastFrame = +new Date() / 1000;
 				window.requestAnimationFrame(that.onFrame);
@@ -65,6 +67,7 @@ window.Game = (function() {
 			if(!that.isPlaying && e.keyCode === 32 && !that.scoreBoardVisible){
 				console.log("keydown");
 				that.reset();
+				$('#introText').hide();
 				// Restart the onFrame loop
 				that.lastFrame = +new Date() / 1000;
 				window.requestAnimationFrame(that.onFrame);
@@ -91,13 +94,14 @@ window.Game = (function() {
 	 * Signals that the game is over.
 	 */
 	Game.prototype.gameover = function() {
+		$('.musicAudio')[0].pause();
+		$('.gameOverAudio')[0].play();
 		this.isPlaying = false;
 		this.scoreBoardVisible = true;
 		console.log('stopping');
 		$('.Border').stop();
 		$('#scoreCounter').hide();
-		$('.gameOverAudio')[0].play();
-
+		
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');

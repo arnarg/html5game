@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>html5 game new</title>
+        <title>Flappy Racoon Mario</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
@@ -25,20 +25,18 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <audio controls>
+        <audio controls autoplay class="musicAudio">
             <source src="audio/mario.mp3" type="audio/mpeg">
         </audio>
 
         <audio class="successAudio">
             <source src="audio/mariosuccess.ogg" type="audio/mpeg">
         </audio>
-
+        <audio class="jumpAudio">
+            <source src="http://themushroomkingdom.net/sounds/wav/smb/smb_stomp.wav" type="audio/mpeg">
+        </audio>
         <audio class="gameOverAudio">
             <source src="audio/deathSoundEffect.mp3" type="audio/mpeg">
-        </audio>
-
-        <audio class="flapAudio">
-            <source src="audio/marioJumping.mp3" type="audio/mpeg">
         </audio>
 
         <div class="GameCanvas">
@@ -55,6 +53,7 @@
                 </button>
             </div>
             <div class="counter" id="scoreCounter">0</div>
+            <div class="introText" id="introText">Mouse click or spacebar to play</div>
 
             <div class="Border"></div>
         </div>
