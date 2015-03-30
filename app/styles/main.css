@@ -136,11 +136,19 @@ body {
 }
 
 .background {
-	width:120%;
+	position: absolute;
+	width:200%;
 	height: 57.6em;
 	background-image: url("../images/background2.png");
 	background-repeat: repeat-x;
+	background-size: auto 100%;
+	transform: translateX(0);
+	animation: backgroundAnimation 5s linear infinite;
+}
 
+@keyframes backgroundAnimation {
+	from { transform: translateX(0); }
+	to { transform: translateX(-51em);}
 }
 
 .GameCanvas {
@@ -153,11 +161,11 @@ body {
 	margin-left: -51.2em;
 	margin-top: -28.8em;
 	overflow: hidden;
-	background-image: url("../images/background2.png");
+	/*background-image: url("../images/background2.png");
 	background-position: 0px 0px;
 	background-repeat: repeat-x;
 	-webkit-animation: animatedBackground 7s linear infinite;
-	animation: animatedBackground 7s linear infinite;
+	animation: animatedBackground 7s linear infinite;*/
 }
 
 .counter {
