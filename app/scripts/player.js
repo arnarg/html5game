@@ -51,13 +51,13 @@ window.Player = (function() {
 				this.pos.y += delta * (FALLSPEED * FALLCOUNTER);
 				++FALLCOUNTER;
 			}
-			++ROTATION;
+			ROTATION += 2;
 		}
 
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em) rotate(' + ROTATION + 'deg)');
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
