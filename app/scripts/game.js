@@ -53,7 +53,6 @@ window.Game = (function() {
 	Game.prototype.start = function() {
 		var that = this;
 		$(window).on('mousedown', function(){
-			console.log("mousedown");
 			if(!that.isPlaying && !that.scoreBoardVisible){
 				that.reset();
 				// Restart the onFrame loop
@@ -63,8 +62,8 @@ window.Game = (function() {
 			}
 	    });
 	    $(window).on('keydown', function(e){
-	    	console.log("keydown");
 			if(!that.isPlaying && e.keyCode === 32 && !that.scoreBoardVisible){
+				console.log("keydown");
 				that.reset();
 				// Restart the onFrame loop
 				that.lastFrame = +new Date() / 1000;
@@ -72,6 +71,7 @@ window.Game = (function() {
 				that.isPlaying = true
 			}
 	    });
+	    return;
 	};
 
 	/**
@@ -108,13 +108,6 @@ window.Game = (function() {
 					that.scoreBoardVisible = false;
 					that.start();
 				});
-		$(window).on('keydown', function(e){
-			if(e.keyCode === 32){
-				scoreboardEl.removeClass('is-visible');
-				that.scoreBoardVisible = false;
-				that.start();
-			}
-	    });
 	};
 
 	/**
