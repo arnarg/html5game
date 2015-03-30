@@ -41,6 +41,7 @@
 
 .Pipeupper {
 	background-image: url("../images/pipeUpper.png");
+	background-position: left bottom;
 	background-size: 100%;
 }
 
