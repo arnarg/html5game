@@ -67,7 +67,7 @@ window.Game = (function() {
 		this.pipe1Lower.reset(false);
 		this.pipe2Upper.reset(false);
 		this.pipe2Lower.reset(false);
-		document.getElementById('scoreCounter').style.display = 'block';
+		$('#scoreCounter').show();
 		$('.counter').html(0);
 	};
 
@@ -78,7 +78,8 @@ window.Game = (function() {
 		this.isPlaying = false;
 		console.log('stopping');
 		$('.Border').stop();
-		document.getElementById('scoreCounter').style.display = 'none';
+		$('#scoreCounter').hide();
+		$('.gameOverAudio')[0].play();
 
 		// Should be refactored into a Scoreboard class.
 		var that = this;
