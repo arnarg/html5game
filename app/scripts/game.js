@@ -112,6 +112,29 @@ window.Game = (function() {
 				});
 	};
 
+	Game.prototype.muteSound = function() {
+		$('.muteSong').click(function() {
+			if($('.muteSong').val === false) {
+				$('.musicAudio')[0].play();
+				$('.musicAudio').val(true);
+			} else {
+				$('.musicAudio')[0].pause();
+				$('.musicAudio').val(false);
+			}
+		});
+		$('.muteSoundEffects').click(function() {
+			if($('.muteSoundEffects').val === false) {
+				$('.jumpAudio')[0].play();
+				$('.gameOverAudio')[0].play();
+				$('.muteSoundEffects').val(true);
+			} else {
+				$('.jumpAudio')[0].pause();
+				$('.gameOverAudio')[0].pause();
+				$('.muteSoundEffects').val(false);
+			}
+		});
+	};
+
 	/**
 	 * Some shared constants.
 	 */
