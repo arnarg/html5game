@@ -88,7 +88,11 @@ window.Game = (function() {
 		this.pipe2Lower.reset(false);
 		$('#scoreCounter').show();
 		$('.counter').html(0);
-		$('.musicAudio')[0].play();
+		$('.Border')[0].style.webkitAnimationPlayState = 'running';
+		$('.background')[0].style.webkitAnimationPlayState = 'running';
+		$('.Player')[0].style.webkitAnimationPlayState = 'running';
+		$('.Player').css("background-image", "url(/images/mario-sprite.png)");
+		$('.Player').css("background-size", "300%");
 	};
 
 	/**
@@ -101,9 +105,12 @@ window.Game = (function() {
 		}
 		this.isPlaying = false;
 		this.scoreBoardVisible = true;
-		console.log('stopping');
-		$('.Border').stop();
 		$('#scoreCounter').hide();
+		$('.Border')[0].style.webkitAnimationPlayState = 'paused';
+		$('.background')[0].style.webkitAnimationPlayState = 'paused';
+		$('.Player')[0].style.webkitAnimationPlayState = 'paused';
+		$('.Player').css("background-image", "url(/images/mario.png)");
+		$('.Player').css("background-size", "100%");
 		
 		// Should be refactored into a Scoreboard class.
 		var that = this;
