@@ -65,13 +65,13 @@ window.Game = (function() {
 	    });
 	    $(window).on('keydown', function(e){
 			if(!that.isPlaying && e.keyCode === 32 && !that.scoreBoardVisible){
-				console.log("keydown");
+				console.log('keydown');
 				that.reset();
 				$('#introText').hide();
 				// Restart the onFrame loop
 				that.lastFrame = +new Date() / 1000;
 				window.requestAnimationFrame(that.onFrame);
-				that.isPlaying = true
+				that.isPlaying = true;
 			}
 	    });
 	    return;
@@ -86,13 +86,14 @@ window.Game = (function() {
 		this.pipe1Lower.reset(false);
 		this.pipe2Upper.reset(false);
 		this.pipe2Lower.reset(false);
+		$('.musicAudio')[0].play();
 		$('#scoreCounter').show();
 		$('.counter').html(0);
 		$('.Border')[0].style.webkitAnimationPlayState = 'running';
 		$('.background')[0].style.webkitAnimationPlayState = 'running';
 		$('.Player')[0].style.webkitAnimationPlayState = 'running';
-		$('.Player').css("background-image", "url(/images/mario-sprite.png)");
-		$('.Player').css("background-size", "300%");
+		$('.Player').css('background-image', 'url(/images/mario-sprite.png)');
+		$('.Player').css('background-size', '300%');
 	};
 
 	/**
@@ -100,17 +101,15 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		$('.musicAudio')[0].pause();
-		if($('.muteSoundEffects').val() === true) {
-			$('.gameOverAudio')[0].play();
-		}
+		$('.gameOverAudio')[0].play();
 		this.isPlaying = false;
 		this.scoreBoardVisible = true;
 		$('#scoreCounter').hide();
 		$('.Border')[0].style.webkitAnimationPlayState = 'paused';
 		$('.background')[0].style.webkitAnimationPlayState = 'paused';
 		$('.Player')[0].style.webkitAnimationPlayState = 'paused';
-		$('.Player').css("background-image", "url(/images/mario.png)");
-		$('.Player').css("background-size", "100%");
+		$('.Player').css('background-image', 'url(/images/mario.png)');
+		$('.Player').css('background-size', '100%');
 		
 		// Should be refactored into a Scoreboard class.
 		var that = this;
@@ -126,21 +125,13 @@ window.Game = (function() {
 	};
 
 	$('.muteSong').click(function() {
-		console.log('mutesong');
-		if($('.muteSong').val() === false) {
-			$('.musicAudio')[0].play();
-			$('.musicAudio').val(true);
-		} else {
-			$('.musicAudio')[0].pause();
-			$('.musicAudio').val(false);
-		}
+		$('.musicAudio').prop('muted', !$('.musicAudio').prop('muted'));
 	});
+	
 	$('.muteSoundEffects').click(function() {
-		if($('.muteSoundEffects').val() === false) {
-			$('.muteSoundEffects').val(true);
-		} else {
-			$('.muteSoundEffects').val(false);
-		}
+		$('.successAudio').prop('muted', !$('.successAudio').prop('muted'));
+		$('.jumpAudio').prop('muted', !$('.jumpAudio').prop('muted'));
+		$('.gameOverAudio').prop('muted', !$('.gameOverAudio').prop('muted'));
 	});
 
 	/**
