@@ -110,7 +110,7 @@ window.Game = (function() {
 		$('.Player')[0].style.webkitAnimationPlayState = 'paused';
 		$('.Player').css('background-image', 'url(/images/mario.png)');
 		$('.Player').css('background-size', '100%');
-		
+
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
@@ -124,11 +124,13 @@ window.Game = (function() {
 				});
 	};
 
-	$('.muteSong').click(function() {
+	$('#muteSong').click(function() {
+		$(this).toggleClass('muted');
 		$('.musicAudio').prop('muted', !$('.musicAudio').prop('muted'));
 	});
-	
-	$('.muteSoundEffects').click(function() {
+
+	$('#muteSoundEffects').click(function() {
+		$(this).toggleClass('muted');
 		$('.successAudio').prop('muted', !$('.successAudio').prop('muted'));
 		$('.jumpAudio').prop('muted', !$('.jumpAudio').prop('muted'));
 		$('.gameOverAudio').prop('muted', !$('.gameOverAudio').prop('muted'));
