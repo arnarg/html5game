@@ -10,7 +10,7 @@ body {
 	height: 5em;
 	background-image: url("../images/mario-sprite.png");
 	background-size: 300%;
-	transform: translateZ(0);
+	transform: translateZ(0) translate(30em, 25em);
 	-moz-animation: spriteAnimation .5s steps(3) infinite alternate;
 	-webkit-animation: spriteAnimation .5s steps(3) infinite alternate;
 }
